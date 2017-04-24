@@ -10,9 +10,15 @@ For all actions user must be authorized.User can add as friend another user and 
 Further updates will bring conferences and UX improvements and of course bug fixes.MANY bug fixes =) cheers.
 
 Initial prototype with backend and frontend can:
+
 1) add users as friends 
 2)stores chat conversations
 3)Autocomplete search
 4)real time chatting
 5)number of unread messages tracking
 6)registration and authorization
+
+
+
+
+
