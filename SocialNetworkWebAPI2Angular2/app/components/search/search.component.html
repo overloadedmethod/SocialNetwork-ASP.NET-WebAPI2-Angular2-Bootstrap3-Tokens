@@ -1,0 +1,50 @@
+﻿
+<div class="container-fluid">
+    <div class="row col-lg-offset-2" draggable="true">
+        <div class="col-lg-9">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <tbody>
+                        <tr *ngFor="let user of searchResult | async">
+                            <td class="col-xs-2">
+                                <img src="https://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="center-block img-fluid img-rounded">
+                            </td>
+                            <td class="col-xs-12">
+                                <div class="lead text-xs-center">
+                                    <span>{{user.name ? user.name : user.username}}</span>
+                                </div>
+                                <div class="p-a-0 text-info text-xs-center" *ngIf="user.lastSeen">
+                                    <span>Last seen:</span>
+                                    <span>{{user.lastSeen}}</span>
+                                </div>
+                                <div class="text-xs-right" (click)="addFriend(user)">
+                                    <a href="#" class="table-link">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x text-success"></i>
+                                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="table-link">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x text-success"></i>
+                                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="table-link danger">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-square fa-stack-2x text-success"></i>
+                                            <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-3 right hidden-xs hidden-sm">
+            <chatslist></chatslist>
+        </div>
+    </div>
+</div>

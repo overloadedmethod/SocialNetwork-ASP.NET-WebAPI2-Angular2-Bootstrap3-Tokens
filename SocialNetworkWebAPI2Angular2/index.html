@@ -1,24 +1,44 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script>document.write('<base href="' + document.location + '" />');</script>
-    <title>Angular.io QuickStart</title>
-    <base href="/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="/">
-    <link rel="stylesheet" href="styles.css">
+	<script>document.write('<base href="' + document.location + '" />');</script>
+	<meta charset="utf-8" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<base href="/">
+	<base />
 
-    <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="systemjs.config.js"></script>
-    <script>
-        System.import('app/main.js').catch(function (err) { console.error(err); });
-    </script>
+
+		<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en"></script>
+	<script src="node_modules/core-js/client/shim.min.js"></script>
+	<script src="node_modules/zone.js/dist/zone.js"></script>
+	<script src="node_modules/reflect-metadata/Reflect.js"></script>
+
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<script src="systemjs.config.js"></script>
+	<script>
+		System.import('app').catch(function (err) { console.error(err); });
+	</script>
+
+	<script src="Scripts/jquery-1.9.1.min.js"></script>
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="http://v4.pingendo.com/assets/bootstrap/themes/default.css" rel="stylesheet" type="text/css">
+	<link href="Content/index.css" rel="stylesheet" />
+	<link href="Content/bootstrap-theme.css" rel="stylesheet" />
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+
+
 </head>
+
 <body>
-    <my-app>Loading App</my-app>
+
+	<main>
+		<div class="container text-xs-center" style="position: absolute;top: 50%;left:50%;transform: translate(-50%,-50%)">
+			<span class="center-block fa fa-5x fa-spin fa-cog text-nowrap text-success"></span>
+		</div>
+	</main>
+
 </body>
+
 </html>

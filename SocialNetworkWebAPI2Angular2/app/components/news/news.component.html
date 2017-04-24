@@ -1,0 +1,14 @@
+﻿<div [ngSwitch]="(userType$ | async)">
+    <template [ngSwitchCase]="ELoginDisplay.Username">
+        <ul class="list-inline">
+            <li><a routerLink="/userdetails" class="nav-link text-inverse"><i class="fa fa-fw fa-user"></i><span class="hidden-md hidden-xs m-a-0 p-a-0">{{(userDetailsService|async)?.username}}</span></a></li>
+            <li><button (click)="onLogout()" type="button" class="active btn btn-danger btn-lg fa fa-external-link fa-fw m-a-0 p-a-0 round"></button></li>
+        </ul>
+    </template>
+    <template ngSwitchDefault>
+        <a class="nav-link text-inverse" routerLink="/identity">
+            <i class="fa fa-fw fa-user"></i>
+            <span class="hidden-md hidden-xs">Login</span>
+        </a>
+    </template>
+</div>

@@ -1,0 +1,75 @@
+﻿<ul class="lead nav nav-pills navbar-item col-xs-12 col-xs-offset-2">
+    <li class="nav-item navbar-left text-inverse text-nowrap">
+        <a routerLink="/search" class="nav-link text-success"><i class="fa fa-fw fa-comments-o"></i><span class="hidden-md hidden-xs">Go chatting!</span></a>
+    </li>
+
+    <li class="nav-item text-inverse">
+        <a routerLink="#" class="nav-link text-inverse"><i class="fa fa-fw fa-bullhorn"></i><span class="hidden-md hidden-xs">News</span></a>
+    </li>
+
+    <li class="nav-item text-inverse">
+        <a routerLink="/privatechat" class="nav-link text-inverse"><i class="fa fa-fw fa-comment"></i><span class="hidden-md hidden-xs">Messages</span></a>
+    </li>
+
+    <li class="nav-item text-inverse">
+        <a routerLink="#" class="nav-link text-inverse"><i class="fa fa-fw fa-tasks"></i><span class="hidden-md hidden-xs">Tasks</span></a>
+    </li>
+
+    <li class="nav-item navbar-form navbar-left hidden-xs hidden-sm">
+        <div class="form-group input-group">
+            <input #box autofocus="autofocus" placeholder="Search Here" name="search" [value]="searchValue" class="form-control" type="text" (keyup)="onKey(box.value)" (keyup.enter)="onEnter(box.value)">
+            <span class="ddl-select input-group-btn">
+                <select id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+                    <option value="" data-hidden="true" class="ddl-title">SEARCH</option>
+                    <option value="friends">Friends</option>
+                    <option value="confs">Conferences</option>
+                </select>
+            </span>
+            <span class="input-group-addon" (click)="onEnter(box.value)">
+                <span class="glyphicon glyphicon-search"></span>
+            </span>
+
+
+                <ul #suggestions class="list-unstyled form-group dropdown-menu" *ngIf="(usersSearch | async)?.length > 0 && showSuggestions">
+                    <li *ngFor="let item of usersSearch | async">
+                        <a (click)="onEnter(item.username)">{{item.name ? item.name : item.username }}</a>
+                    </li>
+                </ul>
+
+        </div>
+    </li>
+
+    <li class="nav-item text-inverse">
+        <div [ngSwitch]="(userType$ | async)">
+            <template [ngSwitchCase]="ELoginDisplay.Username">
+                <ul class="list-inline">
+                    <li><a routerLink="/search" class="nav-link text-inverse"><i class="fa fa-fw fa-user"></i><span class="hidden-md hidden-xs m-a-0 p-a-0">{{(userDetailsService|async)?.username}}</span></a></li>
+                    <li><button (click)="onLogout()" type="button" class="active btn btn-danger btn-lg fa fa-external-link fa-fw m-a-0 p-a-0 round"></button></li>
+                </ul>
+            </template>
+            <template  ngSwitchDefault [ngSwitchCase]="ELoginDisplay.NotLoggedIn">
+                <a class="nav-link text-inverse" routerLink="/identity">
+                    <i class="fa fa-fw fa-user"></i>
+                    <span class="hidden-md hidden-xs">Login</span>
+                </a>
+            </template>
+        </div>
+    </li>
+
+
+</ul>
+
+<div class="navbar-item input-group hidden-md hidden-lg">
+    <input type="text" autofocus="autofocus" autocomplete="on" placeholder="Search Here" name="search" style="" class="form-control">
+    <span class="ddl-select input-group-btn">
+        <select id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+            <option value="" data-hidden="true" class="ddl-title">SEARCH</option>
+            <option value="google">Google</option>
+            <option value="yahoo">Yahoo</option>
+            <option value="bing">Bing</option>
+        </select>
+    </span>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-search"></span>
+    </span>
+</div>

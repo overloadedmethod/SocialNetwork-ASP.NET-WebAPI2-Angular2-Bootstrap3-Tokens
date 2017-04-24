@@ -1,0 +1,22 @@
+﻿<div class="table-responsive">
+    <table class="m-a-0 p-a-0 table table-hover table-sm text-primary">
+        <tbody>
+            <tr *ngFor="let chatter of Chatters | async" class="item m-a-0 p-a-0" (click)="onChatClick(chatter)">
+                <td class="col-xs-1">
+                    <div class="m-a-0 p-a-0">
+                        <img src="https://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png" class="img-circle img-fluid text-xs-center">
+                        <span *ngIf="(chatter.messages - chatter.lastMessageRead)>0" class="badge badge-notify" style="background-color:red;position:relative;top: -15px;left: 35px;">{{chatter.messages - chatter.lastMessageRead}}</span>
+                    </div>
+                </td>
+                <td class="col-xs-2 m-a-0 p-y-2 text-xs-center">
+                    <span>{{chatter.name}}</span>
+                </td>
+                <td class="col-xs-1 text-xs-center">
+                    <span class="fa-stack">
+                        <i class="center-block fa fa-2x fa-circle m-y-1" [ngClass]="{'text-success':chatter.isOnline,'text-muted':!chatter.isOnline}"></i>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

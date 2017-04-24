@@ -1,0 +1,71 @@
+﻿<div class="bg-inverse  fill p-y-3 section section-fill-height section-opaque-dark text-nowrap">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="col-lg-12">
+                <div class="col-sm-5">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3 class="text-inverse">Login to our site</h3>
+                                <p class="text-inverse">Enter username and password to log on:</p>
+                            </div>
+                            <div class="form-top-right p-y-2 text-xs-center">
+                                <i class="fa fa-key text-success"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" [formGroup]="login" (ngSubmit)="onLogin()" action="" method="post" class="login-form text-xs-center">
+                                <div class="form-group">
+                                    <label class="sr-only" for="username">Username</label>
+                                    <input formControlName="username" type="text" name="username" placeholder="Username..." class="form-username form-control" id="login-username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input formControlName="password" type="password" name="password" placeholder="Password..." class="form-password form-control" id="login-password">
+                                </div>
+                                <button type="submit" class="btn btn-lg btn-success">Sign in!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-1 middle-border"></div>
+                <div class="col-sm-1"></div>
+
+                <div class="col-sm-5">
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3 class="text-inverse">Sign up now</h3>
+                                <p class="text-inverse">Fill in the form below to get instant access:</p>
+                            </div>
+                            <div class="form-top-right p-y-1 text-xs-center">
+                                <i class="fa fa-pencil text-success"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" [formGroup]="register" (ngSubmit)="onRegister()" action="" method="post" class="registration-form text-xs-center">
+                                <div class="form-group">
+                                    <label class="sr-only" for="username">Username</label>
+                                    <input formControlName="username" type="text" name="username" placeholder="Username..." class="form-email form-control" id="registration-username">
+                                </div>
+                                <div class="form-group form-password">
+                                    <label class="sr-only" for="password">Password</label>
+                                    <input formControlName="password" type="password" name="password" placeholder="Password..." class="form-email form-control" id="registration-password">
+                                </div>
+                                <div class="form-group form-password">
+                                    <label class="sr-only" for="passwordConfirm">Confirm Password</label>
+                                    <input formControlName="passwordConfirm" type="password" name="passwordConfirm" placeholder="Repeat your password..." class="form-email form-control" id="registration-repeat-password">
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-success">Sign me up!</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
